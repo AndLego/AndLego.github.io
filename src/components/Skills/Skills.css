@@ -1,0 +1,74 @@
+.title-skills h2::after {
+  left: 244px;
+  width: 228px;
+}
+
+.skill-extras {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  align-items: center;
+}
+
+.skills-picture-container {
+  width: 100%;
+  filter: invert(76%) sepia(63%) saturate(356%) hue-rotate(103deg)
+    brightness(108%) contrast(101%);
+  text-align: end;
+}
+
+.skills-picture-container a {
+  text-decoration: none;
+}
+
+.skills-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-content p {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  max-width: 72%;
+}
+
+.skills-content p a {
+  color: var(--enfasis);
+}
+
+.skills-content p a:hover {
+  cursor: pointer;
+}
+
+.tech-container {
+  height: 260px;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  font-size: 4rem;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.tech-container span {
+  font-size: 1rem;
+}
+
+@media (max-width: 760px) {
+  .skills-content p {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+}

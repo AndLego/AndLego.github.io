@@ -1,0 +1,21 @@
+.main-content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 120px;
+}
+
+.blur{
+  filter: blur(4px);
+}
+
+@media (min-width: 900px) {
+  .main-content {
+    padding: 44px 172px;
+  }
+}
+
+@media (max-width: 760px) {
+  .main-content {
+    padding: 0px 34px;
+  }
+}

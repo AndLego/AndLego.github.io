@@ -1,0 +1,43 @@
+.intro-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 500px;
+  background: var(--dark-navy);
+}
+
+.container {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  place-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.item {
+  width: 56%;
+  overflow: visible;
+  stroke: var(--enfasis);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.intro-text{
+  font-size: 4rem;
+  position: absolute;
+  top: 31%;
+  left: 42%;
+  color: var(--enfasis);
+}
+
+.fade-out{
+  opacity: 0;
+  transition: opacity 1s ease;
+}

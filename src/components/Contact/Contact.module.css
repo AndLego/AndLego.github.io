@@ -1,0 +1,58 @@
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  color: var(--enfasis);
+  font-size: 2rem;
+  font-family: var(--numbers);
+}
+
+.contact h1 {
+  color: var(--title);
+  font-size: 4rem;
+  margin: 12px 0;
+}
+
+.contact p {
+  font-size: 1.6rem;
+  max-width: 488px;
+  margin: 0 auto 40px;
+}
+
+.mail {
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--enfasis);
+  border: 2px solid var(--enfasis);
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 100;
+}
+
+.contact a:hover {
+  background-color: var(--lines);
+}
+
+.contact ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  gap: 16px;
+}
+
+.contact ul li a {
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--enfasis);
+  padding: 8px;
+  font-weight: 100;
+  border-radius: 50%;
+}
+
+@media (min-width: 760px) {
+  .contact ul li a {
+    display: none;
+  }
+}
+

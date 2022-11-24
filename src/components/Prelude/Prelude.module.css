@@ -42,7 +42,7 @@ body {
 
 .wrapper {
   display: grid;
-  padding-top: 280px;
+  padding-top: 220px;
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
@@ -154,7 +154,7 @@ body {
   height: 40%;
   min-width: 400px;
   min-height: 500px;
-  position: absolute;
+  /* position: absolute; */
   margin: 40px 0;
   animation: text 0.6s 1.8s ease backwards;
 }
@@ -241,6 +241,13 @@ body {
     font-size: 100px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .wrapper .container .text article p {
+    width: 68%;
+  }
+}
+
 @keyframes anime404 {
   0% {
     opacity: 0;

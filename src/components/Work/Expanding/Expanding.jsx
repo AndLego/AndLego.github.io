@@ -1,7 +1,7 @@
 import React from "react";
 import { FiGithub, FiExternalLink, FiDownload } from "react-icons/fi";
 
-const Expanding = ({ render, start, end }) => {
+const Expanding = ({ render, start, end, language }) => {
   const [active, setActive] = React.useState(0);
   const handleActive = (id) => {
     setActive(id);
@@ -36,7 +36,9 @@ const Expanding = ({ render, start, end }) => {
                   <span>live</span>
                 </a>
               </div>
-              <p>{item.description}</p>
+              <p>
+                {language === "English" ? item.description : item.descripcionEs}
+              </p>
               <div
                 className="panel-image"
                 style={{

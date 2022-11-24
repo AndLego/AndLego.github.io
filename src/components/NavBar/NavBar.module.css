@@ -131,7 +131,7 @@
 
 .mobile {
   background-color: var(--violet);
- 
+
   list-style: none;
   width: 236px;
   height: 100vh;
@@ -193,4 +193,48 @@
 .gone {
   transform: translateX(100vw);
   visibility: hidden;
+}
+
+/* Language */
+
+.language {
+  position: fixed;
+  bottom: -80px;
+  right: 48px;
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.language .choosedLanguage {
+  background-color: var(--lines);
+  padding: 2px 4px 0;
+  border-radius: 4px;
+}
+
+.lan_mobile .choosedLanguage {
+  background-color: var(--enfasis);
+  padding: 2px 4px 0;
+  border-radius: 4px;
+}
+
+.language > div,
+.lan_mobile > div {
+  cursor: pointer;
+  filter: drop-shadow(4px 6px 4px var(--lines));
+}
+
+.language img,
+.lan_mobile img {
+  width: 28px;
+}
+
+.lan_mobile {
+  display: flex;
+  gap: 16px;
+  position: fixed;
+  right: 72px;
+  bottom: -60px;
+  transition: all 0.5s ease-in-out;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Form.module.css";
 import { FiGithub, FiInstagram, FiTwitter, FiLinkedin } from "react-icons/fi";
 
-const Form = () => {
+const Form = ({ language }) => {
   const [contact, setContact] = React.useState(true);
   const [thanks, setThanks] = React.useState(false);
 
@@ -51,6 +51,68 @@ const Form = () => {
     setThanks(false);
   };
 
+  let englishForm = (
+    <>
+      <span style={{ transitionDelay: "0ms" }}>N</span>
+      <span style={{ transitionDelay: "50ms" }}>a</span>
+      <span style={{ transitionDelay: "100ms" }}>m</span>
+      <span style={{ transitionDelay: "150ms" }}>e</span>
+    </>
+  );
+  let spanishForm = (
+    <>
+      <span style={{ transitionDelay: "0ms" }}>N</span>
+      <span style={{ transitionDelay: "50ms" }}>o</span>
+      <span style={{ transitionDelay: "100ms" }}>m</span>
+      <span style={{ transitionDelay: "150ms" }}>b</span>
+      <span style={{ transitionDelay: "200ms" }}>r</span>
+      <span style={{ transitionDelay: "250ms" }}>e</span>
+    </>
+  );
+
+  let englishMsg = (
+    <>
+      <span style={{ transitionDelay: "0ms" }}>M</span>
+      <span style={{ transitionDelay: "50ms" }}>e</span>
+      <span style={{ transitionDelay: "100ms" }}>s</span>
+      <span style={{ transitionDelay: "150ms" }}>s</span>
+      <span style={{ transitionDelay: "200ms" }}>a</span>
+      <span style={{ transitionDelay: "250ms" }}>g</span>
+      <span style={{ transitionDelay: "300ms" }}>e</span>
+    </>
+  );
+
+  let spanishMsg = (
+    <>
+      <span style={{ transitionDelay: "0ms" }}>M</span>
+      <span style={{ transitionDelay: "50ms" }}>e</span>
+      <span style={{ transitionDelay: "100ms" }}>n</span>
+      <span style={{ transitionDelay: "150ms" }}>s</span>
+      <span style={{ transitionDelay: "200ms" }}>a</span>
+      <span style={{ transitionDelay: "250ms" }}>j</span>
+      <span style={{ transitionDelay: "300ms" }}>e</span>
+    </>
+  );
+
+  let content = {
+    English: {
+      h1: "Thanks",
+      p1: "I'll answer you as soon as i can.",
+      p2: "Also feel free to contact on:",
+      but: "Send another one",
+    },
+    Español: {
+      h1: "Gracias",
+      p1: "Responderé lo mas rapido posible",
+      p2: "Sientete libre de contactarme en:",
+      but: "Mandar otro",
+    },
+  };
+
+  language === "Español"
+    ? (content = content.Español)
+    : (content = content.English);
+
   return (
     <>
       {contact && (
@@ -65,12 +127,7 @@ const Form = () => {
           {/* User */}
           <div className={styles.input}>
             <input ref={user} type="text" name="name" required />
-            <label>
-              <span style={{ transitionDelay: "0ms" }}>N</span>
-              <span style={{ transitionDelay: "50ms" }}>a</span>
-              <span style={{ transitionDelay: "100ms" }}>m</span>
-              <span style={{ transitionDelay: "150ms" }}>e</span>
-            </label>
+            <label>{language === "English" ? englishForm : spanishForm}</label>
           </div>
           {/* Email */}
           <div className={styles.input}>
@@ -86,25 +143,19 @@ const Form = () => {
 
           <div className={styles.input}>
             <textarea ref={message} type="text" name="text" required rows="5" />
-            <label>
-              <span style={{ transitionDelay: "0ms" }}>M</span>
-              <span style={{ transitionDelay: "50ms" }}>e</span>
-              <span style={{ transitionDelay: "100ms" }}>s</span>
-              <span style={{ transitionDelay: "150ms" }}>s</span>
-              <span style={{ transitionDelay: "200ms" }}>a</span>
-              <span style={{ transitionDelay: "250ms" }}>g</span>
-              <span style={{ transitionDelay: "300ms" }}>e</span>
-            </label>
+            <label>{language === "English" ? englishMsg : spanishMsg}</label>
           </div>
           {/* Message */}
-          <button>Send</button>
+          <button>{language === "English" ? "Send" : "Enviar"}</button>
         </form>
       )}
       {thanks && (
         <div className={styles.form}>
-          <h1>Thanks {visitor}!</h1>
-          <p className={styles.thanks}>I'll answer you as soon as i can.</p>
-          <p className={styles.thanks}>Also feel free to contact on:</p>
+          <h1>
+            {content.h1} {visitor}!
+          </h1>
+          <p className={styles.thanks}>{content.p1}</p>
+          <p className={styles.thanks}>{content.p2}</p>
           <ol className={styles.contacts}>
             <li>
               <a target="_blank" href="https://github.com/andlego">
@@ -122,7 +173,7 @@ const Form = () => {
               </a>
             </li>
           </ol>
-          <button onClick={handleBack}>Send another one</button>
+          <button onClick={handleBack}>{content.but}</button>
         </div>
       )}
     </>

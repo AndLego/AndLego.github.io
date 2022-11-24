@@ -4,13 +4,33 @@ import Parallax from "parallax-js";
 import styles from "./Prelude.module.css";
 import { TbChevronsDown } from "react-icons/tb";
 
-const Prelude = () => {
+const Prelude = ({ language }) => {
   const scene = React.useRef(null);
 
   // Parallax Code
   React.useEffect(() => {
     let parallax = new Parallax(scene.current);
   }, []);
+
+  let content = {
+    English: {
+      hi: "Hi!",
+      who: "I'm Andres Leon",
+      job: "I'am a FullStack Developer - FrontEnd Specialized. Based in Bogotá, Colombia",
+      scroll: "scroll down",
+    },
+    Español: {
+      hi: "Hola!",
+      who: "Soy Andres Leon",
+      job: "Soy un Desarrollador FullStack - Especializado en FrontEnd, con base en Bogotá, Colombia",
+      scroll: "scrollea",
+    },
+  };
+
+  language === "Español"
+    ? (content = content.Español)
+    : (content = content.English);
+
   return (
     <article data-aos="zoom-in" className={styles.wrapper}>
       <div className={styles.container}>
@@ -38,21 +58,20 @@ const Prelude = () => {
             </div>
           </div>
           <p className={styles.p404} data-depth="0.50">
-            Hi!
+            {content.hi}
           </p>
           <p className={styles.p404} data-depth="0.10">
-            Hi!
+            {content.hi}
           </p>
         </div>
         <div className={styles.text}>
           <article>
             <p>
-              I'm Andres Leon <br />
-              I'am a FullStack Developer - FrontEnd Specialized, Based in
-              Bogotá, Colombia
+              {content.who} <br />
+              {content.job}
             </p>
             <a href="/#about">
-              Scroll down <TbChevronsDown />
+              {content.scroll} <TbChevronsDown />
             </a>
           </article>
         </div>

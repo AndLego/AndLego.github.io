@@ -9,7 +9,7 @@ import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 import "./MainContent.css";
 
-const MainContent = ({ show }) => {
+const MainContent = ({ show, language }) => {
   const size = useWindowWidth();
 
   return (
@@ -22,11 +22,11 @@ const MainContent = ({ show }) => {
           : "main-content blur"
       }
     >
-      <Prelude />
-      <AboutMe />
-      <Skills />
-      <Work />
-      <Contact />
+      <Prelude language={language} />
+      <AboutMe language={language} />
+      <Skills language={language} />
+      <Work language={language} />
+      <Contact language={language} />
     </div>
   );
 };

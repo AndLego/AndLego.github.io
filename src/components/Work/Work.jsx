@@ -11,7 +11,7 @@ import "./Work.css";
 const postPerLoadMobile = 3;
 const postPerLoadElse = 6;
 
-const Work = () => {
+const Work = ({ language }) => {
   const [next, setNext] = React.useState(3);
 
   const size = useWindowWidth();
@@ -27,6 +27,21 @@ const Work = () => {
       : setNext(next + postPerLoadElse);
   };
 
+  let content = {
+    English: {
+      section: "Some Things I've Built",
+      load: "Load More",
+    },
+    Español: {
+      section: "Cosas que eh construido",
+      load: "Cargar Mas",
+    },
+  };
+
+  language === "Español"
+    ? (content = content.Español)
+    : (content = content.English);
+
   return (
     <>
       <section id="work" className="section-work">
@@ -36,22 +51,22 @@ const Work = () => {
           data-aos-duration="1000"
         >
           <span>0.3</span>
-          <h2>Some Things I've Built</h2>
+          <h2>{content.section}</h2>
         </div>
 
         {currentWidth <= 600 && (
           <>
-            {next >= 3 && <Expanding render={projects} start={0} end={3} />}
-            {next >= 6 && <Expanding render={projects} start={3} end={6} />}
-            {next >= 9 && <Expanding render={projects} start={6} end={9} />}
-            {next >= 12 && <Expanding render={projects} start={9} end={12} />}
+            {next >= 3 && <Expanding language={language} render={projects} start={0} end={3} />}
+            {next >= 6 && <Expanding language={language} render={projects} start={3} end={6} />}
+            {next >= 9 && <Expanding language={language} render={projects} start={6} end={9} />}
+            {next >= 12 && <Expanding language={language} render={projects} start={9} end={12} />}
           </>
         )}
 
         {currentWidth > 600 && (
           <>
-            {next >= 6 && <Expanding render={projects} start={0} end={5} />}
-            {next >= 12 && <Expanding render={projects} start={5} end={10} />}
+            {next >= 6 && <Expanding language={language} render={projects} start={0} end={5} />}
+            {next >= 12 && <Expanding language={language} render={projects} start={5} end={10} />}
           </>
         )}
 
@@ -62,10 +77,9 @@ const Work = () => {
             data-aos-duration="1000"
             onClick={handleMoreProjects}
           >
-            Load More <FiDownload />
+            {content.load} <FiDownload />
           </button>
         )}
-
       </section>
     </>
   );

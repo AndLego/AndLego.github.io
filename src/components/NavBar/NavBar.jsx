@@ -8,7 +8,7 @@ import { useWindowWidth } from "../../hooks/useWindowWidth";
 import styles from "./NavBar.module.css";
 
 const NavBar = ({ show, setShow, language, handleLanguage }) => {
-  const [scroll, setScroll] = React.useState("top");
+  const [scroll, setScroll] = React.useState(styles.top);
   const [active, setActive] = React.useState(false);
 
   const size = useWindowWidth();
@@ -18,13 +18,13 @@ const NavBar = ({ show, setShow, language, handleLanguage }) => {
     window.onscroll = function () {
       let y = window.scrollY;
       if (y > lastVal) {
-        setScroll("down");
+        setScroll(styles.down);
       }
       if (y < lastVal) {
-        setScroll("up");
+        setScroll(styles.up);
       }
       if (y === 0) {
-        setScroll("top");
+        setScroll(styles.top);
       }
       lastVal = y;
     };

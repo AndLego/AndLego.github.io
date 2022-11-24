@@ -1,6 +1,6 @@
 .testContainer {
   display: flex;
-  width: 80%;
+  /* width: 80%; */
   margin: 0px auto 100px;
 }
 
@@ -152,28 +152,38 @@
 
 @media screen and (max-width: 1000px) {
   .work-panel h3 {
-    bottom: 88px;
-    font-size: 1.8rem;
+    bottom: 56px;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
     width: 80%;
     text-align: right;
+    left: 20px;
   }
   .panel-btns {
     font-size: 2.6rem;
+    width: 74px;
+    right: 32px;
   }
   .work-panel p {
-    height: 300px;
+    height: 260px;
     font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 1100px) {
-  .work-panel h3 {
-    font-size: 2.2rem;
-  }
   .panel-btns {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .work-panel p {
     font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .panel-btns {
+    font-size: 2rem;
+  }
+  .work-panel p {
+    height: 86%;
   }
 }

@@ -112,11 +112,11 @@ const NavBar = ({ show, setShow, language, handleLanguage, coords }) => {
           </li>
           <li>
             {language === "English" ? (
-              <a href="/Andres_Leon_cv_en.pdf" download>
+              <a href="/FrontEnd_Andres_Leon_cv_en.pdf" download>
                 {content.download}
               </a>
             ) : (
-              <a href="/Andres_Leon_cv.pdf" download>
+              <a href="/FrontEnd_Andres_Leon_cv.pdf" download>
                 {content.download}
               </a>
             )}

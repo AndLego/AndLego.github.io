@@ -239,3 +239,13 @@
   bottom: -60px;
   transition: all 0.5s ease-in-out;
 }
+
+/* Curriculum */
+
+.others li:last-of-type,
+.mobile li:last-of-type {
+  border: 2px solid var(--enfasis);
+  border-radius: 4px;
+  padding: 4px 0px;
+  background-color: var(--navy);
+}

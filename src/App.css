@@ -7,7 +7,7 @@
   --title: #ccd6f6;
   --white: #eff7f6;
   --text: #fff;
-  --enfasis: #FB8A8A;
+  --enfasis: #fb8a8a;
   --violet: #240046;
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   --font: "Barlow", sans-serif;
@@ -17,13 +17,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html {
   font-size: 62.5%;
   background-color: var(--navy);
   color: var(--text);
-  scroll-behavior: smooth;
 }
 
 body {
@@ -32,22 +32,28 @@ body {
 }
 
 section {
-  padding: 136px 0;
-  margin: 0px auto;
+  margin: 0px auto 100px;
   max-width: 1080px;
-}
-
-.section-prelude {
-  height: 112%;
+  padding-top: 20px;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 @media (min-width: 900px) {
   .section-about,
   .section-skills {
-    height: 100%;
+    height: 52%;
   }
 }
 
 .section-contact {
   text-align: center;
+}
+
+div#about_marker,
+div#skill_marker,
+div#work_marker,
+div#contact_marker {
+  height: 1px;
+  width: 1px;
+  margin-bottom: 148px;
 }

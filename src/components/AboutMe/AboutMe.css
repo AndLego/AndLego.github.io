@@ -3,6 +3,7 @@
   align-items: center;
   font-size: 1.6rem;
   margin-bottom: 32px;
+  align-self: start;
 }
 
 .section-title span {

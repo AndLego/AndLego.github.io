@@ -44,11 +44,12 @@ const Work = ({ language }) => {
 
   return (
     <>
+      <div id="work_marker"></div>
       <section id="work" className="section-work">
         <div
           className="section-title work-title"
-          data-aos="fade-up"
-          data-aos-duration="1000"
+          // data-aos="fade-up"
+          // data-aos-duration="1000"
         >
           <span>0.3</span>
           <h2>{content.section}</h2>
@@ -56,25 +57,67 @@ const Work = ({ language }) => {
 
         {currentWidth <= 600 && (
           <>
-            {next >= 3 && <Expanding language={language} render={projects} start={0} end={3} />}
-            {next >= 6 && <Expanding language={language} render={projects} start={3} end={6} />}
-            {next >= 9 && <Expanding language={language} render={projects} start={6} end={9} />}
-            {next >= 12 && <Expanding language={language} render={projects} start={9} end={12} />}
+            {next >= 3 && (
+              <Expanding
+                language={language}
+                render={projects}
+                start={0}
+                end={3}
+              />
+            )}
+            {next >= 6 && (
+              <Expanding
+                language={language}
+                render={projects}
+                start={3}
+                end={6}
+              />
+            )}
+            {next >= 9 && (
+              <Expanding
+                language={language}
+                render={projects}
+                start={6}
+                end={9}
+              />
+            )}
+            {next >= 12 && (
+              <Expanding
+                language={language}
+                render={projects}
+                start={9}
+                end={12}
+              />
+            )}
           </>
         )}
 
         {currentWidth > 600 && (
           <>
-            {next >= 6 && <Expanding language={language} render={projects} start={0} end={5} />}
-            {next >= 12 && <Expanding language={language} render={projects} start={5} end={10} />}
+            {next >= 6 && (
+              <Expanding
+                language={language}
+                render={projects}
+                start={0}
+                end={5}
+              />
+            )}
+            {next >= 12 && (
+              <Expanding
+                language={language}
+                render={projects}
+                start={5}
+                end={10}
+              />
+            )}
           </>
         )}
 
         {next < projects.length && (
           <button
             className="work-btn"
-            data-aos="fade-up"
-            data-aos-duration="1000"
+            // data-aos="fade-up"
+            // data-aos-duration="1000"
             onClick={handleMoreProjects}
           >
             {content.load} <FiDownload />

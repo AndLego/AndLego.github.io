@@ -3,7 +3,7 @@
   box-shadow: 0 10px 30px -10px var(--shadow);
   position: fixed;
   width: 100%;
-  z-index: 5;
+  z-index: 15;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.3s ease;
@@ -69,13 +69,13 @@
   opacity: 0.25s;
 }
 
-.burger.active .line:nth-child(1) {
+.burger.activeBurger .line:nth-child(1) {
   transform: translateY(13px) rotate(45deg);
 }
-.burger.active .line:nth-child(2) {
+.burger.activeBurger .line:nth-child(2) {
   opacity: 0;
 }
-.burger.active .line:nth-child(3) {
+.burger.activeBurger .line:nth-child(3) {
   transform: translateY(-13px) rotate(-45deg);
 }
 

@@ -23,34 +23,37 @@ const Contact = ({ language }) => {
     : (content = content.English);
 
   return (
-    <section
-      id="contact"
-      className={styles.contact}
-      data-aos="fade-up"
-      data-aos-duration="2000"
-    >
-      <h2>0.4 {content.pre}</h2>
-      <h1>{content.section}</h1>
-      <p>{content.p1}</p>
-      <ul>
-        <li>
-          <a target="_blank" href="https://github.com/andlego">
-            <FiGithub />
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://twitter.com/andlegocode">
-            <FiTwitter />
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://www.linkedin.com/in/andlego">
-            <FiLinkedin />
-          </a>
-        </li>
-      </ul>
-      <Form language={language} />
-    </section>
+    <>
+      <div id="contact_marker"></div>
+      <section
+        id="contact"
+        className={styles.contact}
+        // data-aos="fade-up"
+        // data-aos-duration="2000"
+      >
+        <h2>0.4 {content.pre}</h2>
+        <h1>{content.section}</h1>
+        <p>{content.p1}</p>
+        <ul>
+          <li>
+            <a target="_blank" href="https://github.com/andlego">
+              <FiGithub />
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://twitter.com/andlegocode">
+              <FiTwitter />
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/andlego">
+              <FiLinkedin />
+            </a>
+          </li>
+        </ul>
+        <Form language={language} />
+      </section>
+    </>
   );
 };
 

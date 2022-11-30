@@ -5,6 +5,8 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { Sidebars } from "./components/Sidebars/Sidebars";
 import { MainContent } from "./components/MainContent/MainContent";
 
+import styles from "./components/NavBar/NavBar.module.css";
+
 import "./App.css";
 
 const App = () => {
@@ -14,6 +16,7 @@ const App = () => {
   const [language, setLanguage] = React.useState(
     languageStoredInLocalStorage ? languageStoredInLocalStorage : "English"
   );
+  const [coords, setCoords] = React.useState(0);
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -34,9 +37,10 @@ const App = () => {
             }}
             show={show}
             setShow={setShow}
+            coords={coords}
           />
           <Sidebars />
-          <MainContent language={language} show={show} />
+          <MainContent language={language} show={show} setCoords={setCoords} />
         </>
       )}
     </>

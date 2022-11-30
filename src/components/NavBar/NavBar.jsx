@@ -7,32 +7,30 @@ import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 import styles from "./NavBar.module.css";
 
-const NavBar = ({ show, setShow, language, handleLanguage }) => {
+const NavBar = ({ show, setShow, language, handleLanguage, coords }) => {
   const [scroll, setScroll] = React.useState(styles.top);
-  const [active, setActive] = React.useState(false);
+  const [lastCoord, setLastCoord] = React.useState(0);
+  const [activeBurger, setActiveBurger] = React.useState(false);
 
   const size = useWindowWidth();
 
   React.useEffect(() => {
-    let lastVal = 0;
-    window.onscroll = function () {
-      let y = window.scrollY;
-      if (y > lastVal) {
-        setScroll(styles.down);
-      }
-      if (y < lastVal) {
-        setScroll(styles.up);
-      }
-      if (y === 0) {
-        setScroll(styles.top);
-      }
-      lastVal = y;
-    };
-  }, []);
+    let y = coords;
+    if (y > lastCoord) {
+      setScroll(styles.down);
+    }
+    if (y < lastCoord) {
+      setScroll(styles.up);
+    }
+    if (y === 0) {
+      setScroll(styles.top);
+    }
+    setLastCoord(y);
+  }, [coords]);
 
   const handleToggle = () => {
     setShow(!show);
-    !active ? setActive(true) : setActive(false);
+    !activeBurger ? setActiveBurger(true) : setActiveBurger(false);
   };
 
   const chooseLanguage = (lan) => {
@@ -61,7 +59,11 @@ const NavBar = ({ show, setShow, language, handleLanguage }) => {
     : (content = content.English);
 
   return (
-    <header className={`${styles.navbar} ${show && scroll}`}>
+    <header
+      className={`${styles.navbar} ${
+        size.width > 760 ? scroll : show && scroll
+      }`}
+    >
       <nav data-aos="fade-down">
         <a href="/" className={styles.logo_container}>
           A
@@ -69,7 +71,9 @@ const NavBar = ({ show, setShow, language, handleLanguage }) => {
         {size.width <= 760 && (
           <button
             type="button"
-            className={`${styles.burger} ${active ? styles.active : ""}`}
+            className={`${styles.burger} ${
+              activeBurger ? styles.activeBurger : ""
+            }`}
             onClick={handleToggle}
           >
             <span className={styles.line}></span>
@@ -87,22 +91,22 @@ const NavBar = ({ show, setShow, language, handleLanguage }) => {
           }
         >
           <li>
-            <a onClick={handleToggle} href="/#about">
+            <a onClick={handleToggle} href="/#about_marker">
               {content.about}
             </a>
           </li>
           <li>
-            <a onClick={handleToggle} href="/#skills">
+            <a onClick={handleToggle} href="/#skill_marker">
               {content.skills}
             </a>
           </li>
           <li>
-            <a onClick={handleToggle} href="/#work">
+            <a onClick={handleToggle} href="/#work_marker">
               {content.work}
             </a>
           </li>
           <li>
-            <a onClick={handleToggle} href="/#contact">
+            <a onClick={handleToggle} href="/#contact_marker">
               {content.contact}
             </a>
           </li>

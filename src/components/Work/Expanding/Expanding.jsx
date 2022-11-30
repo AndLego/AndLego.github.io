@@ -11,8 +11,8 @@ const Expanding = ({ render, start, end, language }) => {
     <>
       <div
         className="testContainer work-content"
-        data-aos="fade-up"
-        data-aos-duration="1000"
+        // data-aos="fade-up"
+        // data-aos-duration="1000"
       >
         {render?.slice(start, end)?.map((item, index) => {
           return (

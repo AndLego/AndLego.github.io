@@ -38,64 +38,67 @@ const Skills = ({ language }) => {
     : (content = content.English);
 
   return (
-    <section
-      id="skills"
-      className="section-skills"
-      data-aos="fade-up"
-      data-aos-duration="2000"
-    >
-      <div className="section-title title-skills">
-        <span>0.2</span>
-        <h2>{content.section}</h2>
-      </div>
-      <div className="skills-content">
-        <p>
-          {content.p1}
-          <a href="/#work">{content.a1}</a> {content.p2}{" "}
-          <a href="/#contact">{content.a2}</a>
-        </p>
-        <div className="skill-extras">
-          <div className="tech-container">
-            <div className="tech-item">
-              <SiReact />
-              <span>React.js</span>
-            </div>
-            <div className="tech-item">
-              <SiJavascript />
-              <span>JavaScript</span>
-            </div>
-            <div className="tech-item">
-              <SiGraphql />
-              <span>GraphQL</span>
-            </div>
-            <div className="tech-item">
-              <SiMongodb />
-              <span>Mongodb</span>
-            </div>
-            <div className="tech-item">
-              <SiNodedotjs />
-              <span>Node.js</span>
-            </div>
-            <div className="tech-item">
-              <SiWebpack />
-              <span>Webpack</span>
-            </div>
-            <div className="tech-item">
-              <SiHtml5 />
-              <span>Html</span>
-            </div>
-            <div className="tech-item">
-              <SiCss3 />
-              <span>CSS</span>
-            </div>
-            <div className="tech-item">
-              <SiGit />
-              <span>Git</span>
+    <>
+    <div id="skill_marker"></div>
+      <section
+        id="skills"
+        className="section-skills"
+        // data-aos="fade-up"
+        // data-aos-duration="2000"
+      >
+        <div className="section-title title-skills">
+          <span>0.2</span>
+          <h2>{content.section}</h2>
+        </div>
+        <div className="skills-content">
+          <p>
+            {content.p1}
+            <a href="/#work">{content.a1}</a> {content.p2}{" "}
+            <a href="/#contact">{content.a2}</a>
+          </p>
+          <div className="skill-extras">
+            <div className="tech-container">
+              <div className="tech-item">
+                <SiReact />
+                <span>React.js</span>
+              </div>
+              <div className="tech-item">
+                <SiJavascript />
+                <span>JavaScript</span>
+              </div>
+              <div className="tech-item">
+                <SiGraphql />
+                <span>GraphQL</span>
+              </div>
+              <div className="tech-item">
+                <SiMongodb />
+                <span>Mongodb</span>
+              </div>
+              <div className="tech-item">
+                <SiNodedotjs />
+                <span>Node.js</span>
+              </div>
+              <div className="tech-item">
+                <SiWebpack />
+                <span>Webpack</span>
+              </div>
+              <div className="tech-item">
+                <SiHtml5 />
+                <span>Html</span>
+              </div>
+              <div className="tech-item">
+                <SiCss3 />
+                <span>CSS</span>
+              </div>
+              <div className="tech-item">
+                <SiGit />
+                <span>Git</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

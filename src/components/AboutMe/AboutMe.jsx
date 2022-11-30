@@ -23,24 +23,27 @@ const AboutMe = ({ language }) => {
     : (content = content.English);
 
   return (
-    <section
-      id="about"
-      className="section-about"
-      data-aos="fade-up"
-      data-aos-duration="2000"
-    >
-      <div className="section-title">
-        <span>0.1</span>
-        <h2>{content.section}</h2>
-      </div>
-      <div className="about-content">
-        <div className="about-content__text">
-          <p>{content.p1}</p>
-          <p>{content.p2}</p>
-          <p>{content.p3}</p>
+    <>
+      <div id="about_marker"></div>
+      <section
+        id="about"
+        className="section-about"
+        // data-aos="fade-up"
+        // data-aos-duration="2000"
+      >
+        <div className="section-title">
+          <span>0.1</span>
+          <h2>{content.section}</h2>
         </div>
-      </div>
-    </section>
+        <div className="about-content">
+          <div className="about-content__text">
+            <p>{content.p1}</p>
+            <p>{content.p2}</p>
+            <p>{content.p3}</p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
